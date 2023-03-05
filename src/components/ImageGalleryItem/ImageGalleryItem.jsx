@@ -16,11 +16,12 @@ export const ImageGalleryItem = ({
   );
 };
 ImageGalleryItem.propTypes = {
-  image: PropTypes.arrayOf(
-    PropTypes.shape({
+  image: PropTypes.shape(
+    {
       tags: PropTypes.string,
       largeImageURL: PropTypes.string,
       webformatURL: PropTypes.string,
-    })
+    }
   ),
+  onSelect: PropTypes.func,
 };
