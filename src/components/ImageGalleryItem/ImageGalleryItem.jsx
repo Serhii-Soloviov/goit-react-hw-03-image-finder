@@ -1,11 +1,12 @@
 import { ImageGalleryImageStyled } from './ImageGalleryItem.styled';
+import PropTypes from 'prop-types';
 
 export const ImageGalleryItem = ({
   image: { tags, largeImageURL, webformatURL },
   onSelect,
 }) => {
   return (
-    <ImageGalleryImageStyled 
+    <ImageGalleryImageStyled
       src={webformatURL}
       alt={tags}
       onClick={() => {
@@ -14,4 +15,12 @@ export const ImageGalleryItem = ({
     />
   );
 };
-
+ImageGalleryItem.propTypes = {
+  image: PropTypes.arrayOf(
+    PropTypes.shape({
+      tags: PropTypes.string,
+      largeImageURL: PropTypes.string,
+      webformatURL: PropTypes.string,
+    })
+  ),
+};
